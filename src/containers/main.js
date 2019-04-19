@@ -14,7 +14,7 @@ class Main extends React.Component {
     render() {
         return (
             <Router>
-                <SplitPane split="vertical" size="30%">
+                <SplitPane split="vertical" size="10%">
                     <ul>
                         <li>
                             <Link to="/">Home</Link>
