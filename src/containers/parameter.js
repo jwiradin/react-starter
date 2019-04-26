@@ -1,5 +1,6 @@
 import React from 'react';
 import SplitPane from 'react-split-pane';
+import {Container} from 'react-bootstrap';
 
 class Parameter extends React.Component{
     constructor(props){
@@ -9,9 +10,9 @@ class Parameter extends React.Component{
 
     render(){
         return(
-            <SplitPane split="horizontal" size="30%">
+            <SplitPane split="horizontal" size="5%">
             Parameter
-                <div>bottom</div>
+                <Container>bottom</Container>
             </SplitPane>
 
         );

@@ -1,6 +1,8 @@
 import React from 'react';
 import SplitPane from 'react-split-pane';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import SysContext from '../components/sysContext';
+
 import Account from './account';
 import Parameter from './parameter';
 import Home from './home';

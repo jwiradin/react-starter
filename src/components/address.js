@@ -1,7 +1,5 @@
 import React from 'react';
-import SplitPane from 'react-split-pane';
-import { Form, Row, Col } from 'react-bootstrap';
-import Route from 'react-router-dom'
+import { Form, Col } from 'react-bootstrap';
 
 class Address extends React.Component {
     constructor(props) {
@@ -20,6 +18,7 @@ class Address extends React.Component {
 
     render() {
         const address = this.state.acc.address;
+        console.log('address',address)
 
         return (
             <Form timestamp={this.state.step.timeStamp}>

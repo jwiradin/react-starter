@@ -3,7 +3,7 @@ import SplitPane from 'react-split-pane';
 import Name from '../components/name';
 import Address from '../components/address';
 import Bank from '../components/bank';
-import { Nav } from 'react-bootstrap';
+import { Nav, Container } from 'react-bootstrap';
 
 import { Route, NavLink } from 'react-router-dom'
 
@@ -67,29 +67,24 @@ class Account extends React.Component {
             steps[step.seq + 1].timeStamp = new Date().getTime();
             this.setState({ acc: acc, steps: steps });
             this.state.history.push(steps[step.seq + 1].path);
-            console.log(steps[step.seq + 1].path)
         }
-    }
-
-    onChange = (acc) => {
-        this.setState({ acc: acc });
     }
 
     render() {
         console.log('account-render', this.state);
 
         return (
-            <SplitPane split="horizontal" size="30%">
+            <SplitPane split="horizontal" size="5%">
                 <Nav>
                     <NavLink to={this.state.steps[0].path}>Name</NavLink>
                     <NavLink to={this.state.steps[1].path}>Address</NavLink>
                     <NavLink to={this.state.steps[2].path}>Bank Details</NavLink>
                 </Nav>
-                <div>
+                <Container>
                     <Route exact path={this.state.steps[0].path} render={() => <Name acc={this.state.acc} step={this.state.steps[0]} moveNext={this.moveNext} />} />
                     <Route exact path={this.state.steps[1].path} render={() => <Address acc={this.state.acc} step={this.state.steps[1]} moveNext={this.moveNext} />} />
                     <Route exact path={this.state.steps[2].path} render={() => <Bank acc={this.state.acc} step={this.state.steps[2]} moveNext={this.moveNext} />} />
-                </div>
+                </Container>
             </SplitPane>
         );
     }

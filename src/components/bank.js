@@ -1,7 +1,6 @@
 import React from 'react';
-import SplitPane from 'react-split-pane';
-import { Form, Row, Col } from 'react-bootstrap';
-import Route from 'react-router-dom'
+import { Form, Col } from 'react-bootstrap';
+
 
 class Bank extends React.Component {
     constructor(props) {
@@ -14,12 +13,13 @@ class Bank extends React.Component {
     onChange = (e) => {
         const o = e.currentTarget;
         const acc = this.state.acc;
-        acc.name[o.id] = o.value
+        acc.bankAcc[o.id] = o.value
         this.setState({acc: acc});
     }
 
     render() {
         const bankAcc = this.state.acc.bankAcc;
+        console.log('bankAcc',bankAcc)
 
         return (
             <Form timestamp={this.state.step.timeStamp}>

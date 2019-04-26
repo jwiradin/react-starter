@@ -1,5 +1,6 @@
 import React from 'react';
 import SplitPane from 'react-split-pane';
+import {Container} from 'react-bootstrap';
 
 class Home extends React.Component{
     constructor(props){
@@ -9,9 +10,9 @@ class Home extends React.Component{
 
     render(){
         return(
-            <SplitPane split="horizontal" size="30%">
+            <SplitPane split="horizontal" size="5%">
                 Top
-                <div>bottom</div>
+                <Container>bottom</Container>
             </SplitPane>
         );
     }
